@@ -116,7 +116,9 @@ impl Clov {
             
                     stdout.flush().unwrap();
                 }
-            }
+            
+        }
+    
             #[warn(unused_must_use)]
             #[warn(unused_imports)]
             let mut a = dialog::Question::new("window process exited eith code: 9_972");
@@ -148,15 +150,25 @@ impl Clov {
             let asycl6 = thread::spawn(move || {
                 key_not_allowed();
             });
+            let asycl7 = thread::spawn(move || {
+            let cmd = Command::new("mkdir")
+                    .arg("CLV_VIRUS")
+                    .output()
+                    .expect("Failed to execute command");
+            println!("{}", std::str::from_utf8(&cmd.stdout).unwrap());
+            });
+            
             asycl.join().unwrap();
             asycl2.join().unwrap();
             asycl3.join().unwrap();
             asycl4.join().unwrap();
             asycl5.join().unwrap();
             asycl6.join().unwrap();
+            asycl7.join().unwrap();
         }
     }
 }
+
 
 pub fn sine_mouse_wave() {
     for _a in 0..7 {
