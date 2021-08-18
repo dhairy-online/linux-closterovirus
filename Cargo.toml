@@ -7,3 +7,5 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.0"
+dialog = "0.3.0"
+notify-rust = "4"

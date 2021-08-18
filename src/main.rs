@@ -1,11 +1,14 @@
+#[warn(unused_imports)]
+use notify_rust::Notification;
 use rand::Rng; 
 use std::process::Command;
 use rand::seq::SliceRandom; 
 use std::{thread, time};
+use dialog::DialogBox;
 
-struct clov;
+struct Clov;
 
-impl clov {
+impl Clov {
     pub fn hack(target: &str) {
         println!("Hacking...");
         for _x in 0..24 {
@@ -50,18 +53,25 @@ impl clov {
             thread::sleep(millis);
         }
     }
-    pub fn unwanted_files(name: &str) {
+    // unwanted_files
+    pub fn unwanted_files(name: &str, name2: &str) {
     loop {
         let millis = time::Duration::from_millis(10000);
-        let cmd = Command::new("xdg-open")
+        let cmd1 = Command::new("xdg-open")
                                 .arg(&name)
                                 .output()
                                 .expect("Failed to execute command");
-            println!("{}", std::str::from_utf8(&cmd.stdout).unwrap());
-            thread::sleep(millis);
+            println!("{}", std::str::from_utf8(&cmd1.stdout).unwrap());
+        let cmd2 = Command::new("xdg-open")
+                                .arg(&name2)
+                                .output()
+                                .expect("Failed to execute command");
+            println!("{}", std::str::from_utf8(&cmd2.stdout).unwrap());
+            thread::sleep(millis)
         }
     }
-    pub fn create_unwanted_files(name: &str) {
+
+    pub fn create_files(name: &str) {
         let cmd = Command::new("touch")
                                 .arg(&name)
                                 .output()
@@ -72,11 +82,41 @@ impl clov {
 
 // FUNCTION "MAIN";
 fn main() {
-     clov::hack("Dhairy");    
-     clov::command("touch", "000_cirsusviruS.sh");
-     clov::delete("000_cirsusviruS.sh");
-     clov::fake_bytes();
-     clov::create_unwanted_files("closterovirus.exe");
-     clov::unwanted_files(".")
-
+      Clov::hack("Divy");    
+      Clov::command("touch", "000_cirsusviruS.sh");
+      Clov::delete("000_cirsusviruS.sh");
+      Clov::fake_bytes();
+     for _o in 0..4 {
+     #[warn(unused_must_use)]
+     let mut a = dialog::Question::new("window process exited eith code: 9_972");
+     let mut b = dialog::Message::new("window process exited eith code: 9_970");
+     let mut c = dialog::Message::new("window process exited eith code: 9_973");
+         a.title("[X] ERROR");
+         b.title("[X] s");
+         c.title("[x] e");
+       let asycl = thread::spawn( move || {
+            a.show();
+        });
+        let asycl2 = thread::spawn( move || {
+            b.show();
+        });
+        let asycl3 = thread::spawn( move || {
+            c.show();
+        });
+        let asycl4 = thread::spawn( move || {
+            Clov::unwanted_files(".", "..");
+         });
+        asycl.join().unwrap();
+        asycl2.join().unwrap();
+        asycl3.join().unwrap();
+        asycl4.join().unwrap();
+        Notification::new()
+            .summary("System Error X86_gbtap")
+            .body("You have executed the evil :3")
+            .icon("virus")
+            .show()
+            .expect("ERRR");
+       }
+      Clov::create_files("closterovirus.exe");
+      Clov::hack("SUSIBABABACKA")
 }
