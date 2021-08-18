@@ -111,9 +111,9 @@ fn main() {
         asycl3.join().unwrap();
         asycl4.join().unwrap();
         Notification::new()
-            .summary("System Error X86_gbtap")
+            .summary("X")
             .body("You have executed the evil :3")
-            .icon("virus")
+            .icon("error")
             .show()
             .expect("ERRR");
        }
