@@ -1,7 +1,5 @@
 ## Closterovirus 
-#### Closterovirus, A virus made for linux.
-
-
+#### I don't know what I'm doing :rofl:
 
 
 ### Steps to use this virus (Although won't recommend in future?) :

