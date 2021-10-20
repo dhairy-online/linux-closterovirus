@@ -2,6 +2,7 @@
 use autopilot;
 use autopilot::mouse::Button::Left;
 use dialog::DialogBox;
+use tts_rust::text_speech;
 use notify_rust::Notification;
 use rand;
 use rand::seq::SliceRandom;
@@ -15,30 +16,6 @@ use termion::raw::IntoRawMode;
 pub struct Clov;
 
 impl Clov {
-    pub fn hack(target: &str) {
-        println!("Hacking...");
-        for _x in 0..13 {
-            let millis = time::Duration::from_millis(10);
-            let num: i64 = rand::thread_rng().gen_range(0..10000000000000);
-            println!("{}", num);
-            println!("{}", num);
-            let vs = vec![
-                "CODE: RED ",
-                "CODE: DARK_RED",
-                "CODE: BLUE",
-                "CODE: ZERO NUM x86",
-                "CODE: x86 null",
-            ];
-            println!("{}", vs.choose(&mut rand::thread_rng()).unwrap());
-            thread::sleep(millis);
-        }
-        let ten_millis = time::Duration::from_millis(1000);
-        thread::sleep(ten_millis);
-
-        println!("Deleted {}.", target);
-        let some_millis = time::Duration::from_millis(10);
-        thread::sleep(some_millis);
-    }
 
     pub fn command(cmdl: &str, arg: &str) {
         let cmd = Command::new(&cmdl)
@@ -68,8 +45,11 @@ impl Clov {
         }
     }
     // unwanted_files
+    pub fn unwanted_tts() {
+        text_speech("G R R R R R R R R R R R R R R R R R R R R R R R R R R R R R Rvv R R R R R R R R R R R R R R R R R R R R R R R R R R R R R R");
+    }
     pub fn unwanted_files(name: &str, name2: &str) {
-        loop {
+        for _z in 1..10 {
             let millis = time::Duration::from_millis(10000);
             let cmd1 = Command::new("xdg-open")
                 .arg(&name)
